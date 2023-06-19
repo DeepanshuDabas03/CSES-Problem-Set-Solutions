@@ -11,15 +11,13 @@ int main()
 	cout.tie(0);
 	ll n;
 	cin >> n;
+	dp[0] = 1;
 	for (int j = 1; j <= n; j++)
 	{
 		for (int i = 1; i <= 6; i++)
 		{
 			if (j - i >= 0)
 			{
-				if (j - i == 0)
-					dp[j] = (dp[j] + 1) % mod;
-				else
 					dp[j] = (dp[j] + dp[j - i]) % mod;
 			}
 		}
